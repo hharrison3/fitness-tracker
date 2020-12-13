@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -13,9 +13,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect("mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.mongodb.net/Cluster0?retryWrites=true&w=majority", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 // routes
