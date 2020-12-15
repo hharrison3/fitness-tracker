@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
+//connection to atlasDB
 mongoose.connect("mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.mongodb.net/Cluster0?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -20,8 +20,8 @@ mongoose.connect("mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.
 });
 
 // routes
-app.use(require("./Main/routes/api.js"));
-app.use(require("./Main/routes/view.js"));
+app.use(require("./routes/api.js"));
+app.use(require("./routes/view.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
