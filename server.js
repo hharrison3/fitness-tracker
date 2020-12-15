@@ -20,8 +20,8 @@ mongoose.connect("mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.
 });
 
 // routes
-app.use(require("./routes/api.js"));
-app.use(require("./routes/view.js"));
+app.use(require("./Main/routes/api.js"));
+app.use(require("./Main/routes/view.js"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
