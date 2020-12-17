@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 //connection to atlasDB
-mongoose.connect("mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.mongodb.net/Cluster0?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://harbourharrison:FKUBcMBZ6lO0SATM@cluster0.bnl5i.mongodb.net/Cluster0?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
